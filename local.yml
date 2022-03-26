@@ -6,3 +6,9 @@
   - name: Install htop
     apt:
       name: htop
+ 
+- hosts: mediaplayer
+  tags: mediaplayer
+  become: true
+  roles:
+    - mediaplayer
