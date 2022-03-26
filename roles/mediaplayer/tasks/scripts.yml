@@ -6,5 +6,5 @@
 - name: system setup | openssh | copy issue.net
   tags: openssh,ssh,system,settings
   copy:
-    src: files/scripts/8
+    src: files/scripts
     dest: /home/{{ user }}/Scripts
