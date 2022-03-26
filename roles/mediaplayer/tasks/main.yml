@@ -8,3 +8,4 @@
 - block:
         
   - include_tasks: sources.yml
+  - include_tasks: repositories.yml
