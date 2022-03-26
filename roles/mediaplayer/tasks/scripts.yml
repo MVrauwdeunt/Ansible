@@ -2,6 +2,10 @@
   file:
     path: /home/{{ user }}/Scripts
     state: directory
+    owner: osmc
+    group: osmc
+    mode: 0775
+    recurse: yes
 
 #- name: Copy Scripts folder
 #  tags: openssh,ssh,system,settings

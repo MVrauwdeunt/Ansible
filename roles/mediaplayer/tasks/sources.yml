@@ -2,12 +2,16 @@
   template:
     src: "templates/sources.j2"
     dest: "/home/{{ user }}/.kodi/userdata/sources.xml"
-    owner: osmc 
+    owner: osmc
     group: osmc
+    mode: 0775
+    recurse: yes
 
 - name: create advancedsettings file from template
   template:
     src: "templates/advancedsettings.j2"
     dest: "/home/{{ user }}/.kodi/userdata/advancedsettings.xml"
-    owner: osmc 
+    owner: osmc
     group: osmc
+    mode: 0775
+    recurse: yes

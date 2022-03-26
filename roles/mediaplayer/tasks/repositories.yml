@@ -2,6 +2,10 @@
   file:
     path: /home/{{ user }}/Downloads
     state: directory
+    owner: osmc
+    group: osmc
+    mode: 0775
+    recurse: yes
 
 - name: Copy Fuchs246 repository
   get_url: 
