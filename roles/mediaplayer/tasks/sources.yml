@@ -1,6 +1,13 @@
 - name: create sources file from template
   template:
     src: "templates/sources.j2"
-    dest: "/home/{{ user }}/sources.xml"
+    dest: "/home/{{ user }}.kodi/userdata/sources.xml"
+    owner: osmc 
+    group: osmc
+
+- name: create advancedsettings file from template
+  template:
+    src: "templates/advancedsettings.j2"
+    dest: "/home/{{ user }}.kodi/userdata/advancedsettings.xml"
     owner: osmc 
     group: osmc
