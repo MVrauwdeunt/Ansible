@@ -1,6 +1,10 @@
 - hosts: localhost
   connection: local
   become: true
+  vars_files: 
+    - vars/vars.yml
+    - vars/vault.yml
+
   vars_prompt:
     - name: hostname
       prompt: What is the hostname of this system
