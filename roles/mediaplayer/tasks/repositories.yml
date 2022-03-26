@@ -4,5 +4,4 @@
     state: directory
 
 - name: Copy Fuchs246 repository
-  copy: remote_src=True src=https://github.com/Fuchs246/repository.fuchs246/archive/refs/heads/main.zip
- dest=/home/{{ user }}/Downloads/repository.fuchs246-1.0.0.zip
+  copy: remote_src=True src=https://github.com/Fuchs246/repository.fuchs246/archive/refs/heads/main.zip dest=/home/{{ user }}/Downloads/repository.fuchs246-1.0.0.zip
