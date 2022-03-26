@@ -1,9 +1,4 @@
-- name: debug specified user's home dir through ansible.env
-  debug: var=ansible_env.HOME
-  #become: true
-  become_user: "osmc"
-
-- name: create Nextcloud-client config file from template
+- name: create sources file from template
   template:
     src: "templates/sources.j2"
     dest: "/home/{{ user }}/sources.xml"
