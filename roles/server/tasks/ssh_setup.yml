@@ -2,11 +2,32 @@
   file:
     path: "/home/{{ user }}/.ssh"
     state: directory
-- name: create empty file
+
+- name: create empty authorized_keys file
   file:
     path: "/home/{{ user }}/.ssh/authorized_keys"
     state: touch
+
 - name: put pubkey
   lineinfile:
     path: "/home/{{ user }}/.ssh/authorized_keys"
     line: "{{ pubkey }}"
+
+- name: system setup | openssh | generate sshd_config file from template
+  tags: openssh,ssh,system,settings
+  template:
+    src: templates/sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    owner: root
+    group: root
+    mode: 0644
+  notify: restart_sshd
+
+- name: system setup | openssh | copy issue.net
+  tags: openssh,ssh,system,settings
+  copy:
+    src: files/openssh_issue.net
+    dest: /etc/issue.net
+    owner: root
+    group: root
+    mode: 0644
