@@ -17,5 +17,6 @@
   tags: mediaplayer
   become: true
   roles:
+    - base
     - server
     - mediaplayer
