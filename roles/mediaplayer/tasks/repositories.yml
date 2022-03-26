@@ -7,3 +7,8 @@
   get_url: 
     url: https://github.com/Fuchs246/repository.fuchs246/archive/refs/heads/main.zip
     dest: /home/{{ user }}/Downloads/repository.fuchs246-1.0.0.zip
+
+- name: Copy Fuchs246 repository
+  get_url: 
+    url: https://github.com/dut-iptv/dut-iptv.github.io/raw/master/repository.anon.iptv-latest.zip
+    dest: /home/{{ user }}/Downloads/repository.anon.iptv-latest.zip
