@@ -1,0 +1,26 @@
+---
+  - name: install packages
+    package:
+      name: 
+        - cron
+
+      #  - htop
+      #  - cronie
+      #  - keepass
+      #  - vim
+      #  - cura
+      #  - code
+      #  - thunderbird
+      #  - nextcloud-client
+      #  - libreoffice-fresh
+      #  - steam
+      #  - steam
+      #  - wine
+      #  - powerline-fonts
+      #  - bc
+      #  - xsel
+      #  - xdotool
+      #  - virtualbox
+      #  - linux-headers
+      #  - base-devel
+      #  - dkms
