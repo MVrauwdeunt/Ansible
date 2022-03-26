@@ -6,6 +6,6 @@
 - name: create Nextcloud-client config file from template
   template:
     src: "templates/sources.j2"
-    dest: "/home/osmc/sources.xml"
+    dest: "/home/{{ user }}/sources.xml"
     owner: osmc 
     group: osmc
