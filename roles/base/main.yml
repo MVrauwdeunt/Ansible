@@ -1,0 +1,11 @@
+- 
+  vars_prompt:
+
+    - name: hostname
+      prompt: What is the hostname of this system
+      private: no
+
+    - name: password
+      prompt: What is your password?
+
+    
