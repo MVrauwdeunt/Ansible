@@ -1,0 +1,9 @@
+- name: Creates directory
+  file:
+    path: /home/{{ user }}/Backup
+    state: directory
+    owner: osmc
+    group: osmc
+    mode: 0775
+    recurse: yes
+
