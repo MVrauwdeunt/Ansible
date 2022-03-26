@@ -1,0 +1,10 @@
+- name: Creates Script directory
+  file:
+    path: /home/{{ user }}/Scripts
+    state: directory
+
+- name: system setup | openssh | copy issue.net
+  tags: openssh,ssh,system,settings
+  copy:
+    src: files/scripts/8
+    dest: /home/{{ user }}/Scripts

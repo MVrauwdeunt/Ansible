@@ -1,7 +1,12 @@
 - hosts: localhost
   connection: local
   become: true
-       
+  vars_prompt:
+    - name: hostname
+      prompt: What is the hostname of this system
+      private: no
+
+  pre_tasks:
     - name: update repositories
       apt:
         update_cache:: yes
