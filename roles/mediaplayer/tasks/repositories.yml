@@ -14,6 +14,7 @@
     dest: /home/{{ user }}/Downloads/repository.anon.iptv-latest.zip
   
 - name: Copy hyperion
-  get_url: https://github.com/hyperion-project/hyperion.ng/releases/download/2.0.12/Hyperion-2.0.12-Linux-armv7l.deb
-  dest: /home/{{ user }}/Downloads/Hyperion-2.0.12-Linux-armv7l.deb
+  get_url:
+    url: https://github.com/hyperion-project/hyperion.ng/releases/download/2.0.12/Hyperion-2.0.12-Linux-armv7l.deb
+    dest: /home/{{ user }}/Downloads/Hyperion-2.0.12-Linux-armv7l.deb
   when: inventory_hostname == "baldr"
