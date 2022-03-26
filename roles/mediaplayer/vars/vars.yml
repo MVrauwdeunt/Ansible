@@ -1,1 +1,4 @@
 user: osmc
+scripts_osmc:
+  - irswitch.sh
+  - shutdown.sh
