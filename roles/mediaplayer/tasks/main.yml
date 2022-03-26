@@ -1,8 +1,9 @@
 # Load distro-specific variables
 - include_vars: "vars.yml"
   tags: always
-  #- include_vars: "vault.yml"
-  #tags: always
+
+- include_vars: "vault.yml"
+  tags: always
 
 - block:
         
