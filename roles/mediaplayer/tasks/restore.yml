@@ -7,6 +7,10 @@
     mode: 0775
     recurse: yes
 
+- name: Stop Mediaplayer
+  command: "sudo systemctl stop mediacenter"
+  become_user: "{{ user }}"
+
 - name: Copy backup
   command: "scp -oStrictHostKeyChecking=no {{ fileserver }}:{{ backuppath }}*.tar.gz /home/{{ user }}/Backup/"
   become_user: "{{ user }}"
@@ -17,4 +21,8 @@
     dest: /home/{{ user }}/.kodi/
     remote_src: yes
     owner: "{{ user }}"
+
+- name: Start Mediaplayer
+  command: "sudo systemctl start mediacenter"
+  become_user: "{{ user }}"
 
