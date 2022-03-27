@@ -1,1 +1,2 @@
 user: osmc
+openssh_service: "sudo systemctl restart ssh.service"
