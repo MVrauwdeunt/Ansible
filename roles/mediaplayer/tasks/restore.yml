@@ -7,3 +7,14 @@
     mode: 0775
     recurse: yes
 
+- name: Copy backup
+  ansible.builtin.copy:
+    src: bragi:/volume2/Backup/osmc/
+    dest: /home/{{ user }}/Backup/
+    remote_src: yes
+
+#- name: Unarchive a file that is already on the remote machine
+#  ansible.builtin.unarchive:
+#    src: /home/{{ user }}/Backup/
+#    dest: /home/{{ user }}.kodi/
+#    remote_src: yes
