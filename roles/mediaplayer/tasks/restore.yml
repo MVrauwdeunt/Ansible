@@ -17,5 +17,4 @@
     dest: /home/{{ user }}/.kodi/
     remote_src: yes
     owner: "{{ user }}"
-    become_user: "{{ user }}"
 
