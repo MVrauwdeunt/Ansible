@@ -12,7 +12,7 @@
     become_user: "{{ user }}"
 
 - name: Unarchive a file that is already on the remote machine
-  ansible.builtin.unarchive:
+  unarchive:
     src: /home/{{ user }}/Backup/OSMCBACKUP_2022_03_26_20_19_17.tar.gz
     dest: /home/{{ user }}.kodi/
     remote_src: yes
