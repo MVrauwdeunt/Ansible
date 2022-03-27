@@ -5,15 +5,14 @@
         - cron
         - python3-crypto
         - build-essential
-        - python3-setuptools
         - python3-pip
 
-  - name: Installing multiple python packages in Ansible
-    pip:
-      name:
+  #- name: Installing multiple python packages in Ansible
+  #  pip:
+  #    name:
         #- setuptools
-        - wheel
-        - pycryptodomex
+  #      - wheel
+  #      - pycryptodomex
 
       #  - htop
       #  - cronie
