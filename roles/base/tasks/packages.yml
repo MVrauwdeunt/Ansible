@@ -6,10 +6,14 @@
         - python3-crypto
         - build-essential
         - python3-pip
+        - python3-setuptools
 
-  #- name: Installing multiple python packages in Ansible
-  #  pip:
-  #    name: setuptools,wheel,pycryptodomex
+  - name: Installing multiple python packages in Ansible
+    pip:
+      name:
+        #- setuptools
+        - wheel
+        - pycryptodomex
 
       #  - htop
       #  - cronie
