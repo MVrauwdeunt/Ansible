@@ -9,7 +9,7 @@
 
 - name: Copy backup
   command: "scp -oStrictHostKeyChecking=no {{ fileserver }}:{{ backuppath }}*.tar.gz /home/{{ user }}/Backup/"
-    become_user: "{{ user }}"
+  become_user: "{{ user }}"
 
 - name: Unarchive a file that is already on the remote machine
   unarchive:
