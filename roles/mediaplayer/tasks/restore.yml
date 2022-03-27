@@ -8,10 +8,11 @@
     recurse: yes
 
 - name: Copy backup
-  ansible.builtin.copy:
-    src: bragi:/volume2/Backup/osmc/*.tar.gz
-    dest: /home/{{ user }}/Backup/
-    remote_src: yes
+  command: "scp -oStrictHostKeyChecking=no zanbee@bragi:/volume2/Backup/osmc/*.tar.gz /home/{{ user }}/Backup/"
+  #ansible.builtin.copy:
+  #  src: bragi:/volume2/Backup/osmc/*.tar.gz
+  #  dest: /home/{{ user }}/Backup/
+  #  remote_src: yes
 
 #- name: Unarchive a file that is already on the remote machine
 #  ansible.builtin.unarchive:
