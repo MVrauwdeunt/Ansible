@@ -1,0 +1,11 @@
+[Unit]
+Description=RemotePi Board Shutdown Service
+Before=multi-user.target
+Conflicts=shutdown.target
+[Service]
+ExecStart=/bin/true
+ExecStop=/etc/shutdown.sh
+Type=oneshot
+RemainAfterExit=yes
+[Install]
+WantedBy=multi-user.target

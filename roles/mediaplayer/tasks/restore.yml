@@ -8,21 +8,31 @@
     recurse: yes
 
 - name: Stop Mediaplayer
-  command: "sudo systemctl stop mediacenter"
+  command: "systemctl stop mediacenter"
   become_user: "{{ user }}"
 
 - name: Copy backup
   command: "scp -oStrictHostKeyChecking=no {{ fileserver }}:{{ backuppath }}*.tar.gz /home/{{ user }}/Backup/"
   become_user: "{{ user }}"
 
+- name: Get files in a folder
+  find:
+    paths: "/home/{{ user }}/Backup/"
+  register: found_files
+
+- name: Get latest file
+  set_fact:
+    latest_file: "{{ found_files.files | sort(attribute='mtime',reverse=true) | first }}"
+
+
 - name: Unarchive a file that is already on the remote machine
   unarchive:
-    src: /home/{{ user }}/Backup/OSMCBACKUP_2022_03_26_20_19_17.tar.gz
+    src: /home/{{ user }}/Backup/OSMCBACKUP_2022_03_27_18_39_07.tar.gz
     dest: /home/{{ user }}/.kodi/
     remote_src: yes
     owner: "{{ user }}"
 
 - name: Start Mediaplayer
-  command: "sudo systemctl start mediacenter"
+  command: "systemctl start mediacenter"
   become_user: "{{ user }}"
 
