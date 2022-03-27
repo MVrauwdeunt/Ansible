@@ -24,7 +24,9 @@
   set_fact:
     latest_file: "{{ found_files.files | sort(attribute='mtime',reverse=true) | first }}"
 
-
+- - debug:
+    msg: {{ latest_file }}
+    
 - name: Unarchive a file that is already on the remote machine
   unarchive:
     src: /home/{{ user }}/Backup/OSMCBACKUP_2022_03_27_18_39_07.tar.gz

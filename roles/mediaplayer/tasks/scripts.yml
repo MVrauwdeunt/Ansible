@@ -19,7 +19,7 @@
   copy:
     src: files/scripts/{{ item }}
     dest: /home/{{ user }}/Scripts/
-  with_items: "{{ vars['scripts_' + ansible_hostname] + '.sh' }}"
+  with_items: "{{ vars['scripts_' + ansible_hostname + '.sh'] }}"
 
 - name: create advancedsettings file from template
   template:
