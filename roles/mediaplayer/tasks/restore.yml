@@ -9,7 +9,7 @@
 
 - name: Copy backup
   ansible.builtin.copy:
-    src: bragi:/volume2/Backup/osmc/
+    src: bragi:/volume2/Backup/osmc/*.tar.gz
     dest: /home/{{ user }}/Backup/
     remote_src: yes
 
