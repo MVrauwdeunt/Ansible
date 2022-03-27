@@ -13,13 +13,6 @@
     mode: 0600
     owner: "{{ user }}"
 
-- name: Install ssh key
-  copy: 
-    src: "files/id_ed25519" 
-    dest: "/root/.ssh/id_ed25519"
-    mode: 0600
-    owner: root
-
 - name: create empty authorized_keys file
   file:
     path: "/home/{{ user }}/.ssh/authorized_keys"

@@ -8,7 +8,8 @@
     recurse: yes
 
 - name: Copy backup
-  command: "scp -oStrictHostKeyChecking=no zanbee@bragi:/volume2/Backup/osmc/*.tar.gz /home/{{ user }}/Backup/"
+  command: "scp -oStrictHostKeyChecking=no {{ fileserver }}:{{ backuppath }}*.tar.gz /home/{{ user }}/Backup/"
+  become_user: {{ user }}
   #ansible.builtin.copy:
   #  src: bragi:/volume2/Backup/osmc/*.tar.gz
   #  dest: /home/{{ user }}/Backup/
