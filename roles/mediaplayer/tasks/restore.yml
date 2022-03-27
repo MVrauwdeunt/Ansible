@@ -14,7 +14,7 @@
 - name: Unarchive a file that is already on the remote machine
   unarchive:
     src: /home/{{ user }}/Backup/OSMCBACKUP_2022_03_26_20_19_17.tar.gz
-    dest: /home/{{ user }}.kodi/
+    dest: /home/{{ user }}/.kodi/
     remote_src: yes
     owner: "{{ user }}"
     become_user: "{{ user }}"
