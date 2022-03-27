@@ -13,7 +13,8 @@
 #    src: files/scripts
 #    dest: /home/{{ user }}/Scripts
 
-- debug: msg={{ vars['scripts_' + ansible_hostname] }}
+- debug:
+    msg: "{{ vars['scripts_' + ansible_hostname] }}"
 
 - name: Copy Scripts
   copy:
