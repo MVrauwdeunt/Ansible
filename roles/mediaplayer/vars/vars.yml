@@ -2,12 +2,13 @@ user: osmc
 scripts_osmc:
   - irswitch.sh
   - shutdown.sh
-  #- fan_control
-  #- irswitch
-  #- irswitch2
-  #- mqtt_gpio
-  #- tvswitch
 
 scripts_freya:
   - irswitch.sh
   - shutdown.sh
+
+scripts_baldr:
+  - irswitch.sh
+  - shutdown.sh
+  - fancontrol.sh
+  - tvswitch.sh

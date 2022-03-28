@@ -1,8 +1,8 @@
 mqtt:
-  host: 192.168.178.250
-  port: 1883
-  user: "Kodi"
-  password: "VPU33SQsf80XOpW1PkRU"
+  host: {{ fileserver_ip }}
+  port: {{ mqtt_port }}
+  user: {{ mqtt_user }}
+  password: {{ mqtt_pass }}
   topic_prefix: home/woonkamer
 
 gpio_modules:
