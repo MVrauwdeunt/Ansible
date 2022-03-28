@@ -1,10 +1,10 @@
 user: osmc
 scripts_osmc:
-  #- irswitch.sh
-  #- shutdown.sh
+  - irswitch.sh
+  - shutdown.sh
   #- fan_control
-  - irswitch
-  - irswitch2
+  #- irswitch
+  #- irswitch2
   #- mqtt_gpio
   #- tvswitch
 
