@@ -1,3 +1,9 @@
+- include_vars: "vars.yml"
+  tags: always
+
+- include_vars: "vault.yml"
+  tags: always
+
 - hosts: localhost
   connection: local
   become: true
