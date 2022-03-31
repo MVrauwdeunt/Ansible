@@ -14,7 +14,7 @@
 #    dest: /home/{{ user }}/Scripts
 
 - debug:
-    msg: "{{ vars[inventory_dir + 'vars'] | dirname }}"
+    msg: "{{ test }}"
 
 - name: Copy Scripts
   copy:
