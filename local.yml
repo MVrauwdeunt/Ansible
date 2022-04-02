@@ -8,8 +8,8 @@
   connection: local
   become: true
   vars_files: 
-    - vars.yml
-    - vault.yml
+    - vars/vars.yml
+    - vars/vault.yml
 
   pre_tasks:
     - name: update repositories
