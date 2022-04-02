@@ -13,9 +13,6 @@
 #    src: files/scripts
 #    dest: /home/{{ user }}/Scripts
 
-- debug:
-    msg: "{{ hostvars[host]['varname'] }}"
-
 - name: Copy Scripts
   copy:
     src: files/scripts/{{ item }}
