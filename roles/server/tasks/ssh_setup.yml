@@ -13,6 +13,13 @@
     mode: 0600
     owner: "{{ user }}"
 
+- name: Install ssh config
+  copy: 
+    src: "files/config" 
+    dest: "/home/{{ user }}/.ssh/config"
+    mode: 0600
+    owner: "{{ user }}"
+
 - name: create empty authorized_keys file
   file:
     path: "/home/{{ user }}/.ssh/authorized_keys"
