@@ -17,11 +17,12 @@
   tags: mediaplayer
   become: true
   pre_tasks:
-    - debug:
-        msg: "{ ansible_host }"
     - include_vars: "osmc/test.yml"
       tags: always
   roles:
     #- base
     #- server
     #- mediaplayer
+  tasks:
+    - debug:
+        msg: "System {{ inventory_hostname }} has uuid {{ ansible_product_uuid }}"
