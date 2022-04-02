@@ -12,7 +12,7 @@
   become_user: "{{ user }}"
 
 - name: Copy backup
-  command: "scp -oStrictHostKeyChecking=no {{ fileserver }}:{{ backuppath }}*.tar.gz /home/{{ user }}/Backup/"
+  command: "scp -oStrictHostKeyChecking=no {{ fileserver }}:{{ backuppath }}/ *.tar.gz /home/{{ user }}/Backup/"
   become_user: "{{ user }}"
 
 - name: Get files in a folder
