@@ -5,9 +5,9 @@
 - include_vars: "vault.yml"
   tags: always
 
-- block:
+#- block:
         
-  #- include_tasks: sources.yml
-  - include_tasks: restore.yml
-  - include_tasks: scripts.yml
-  - include_tasks: repositories.yml
+#- include_tasks: sources.yml
+- include_tasks: restore.yml
+- include_tasks: scripts.yml
+- include_tasks: repositories.yml
