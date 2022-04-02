@@ -13,4 +13,4 @@ scripts_baldr:
   - fancontrol.sh
   - tvswitch.sh
 
-test: "Deze variabele is vanuit de mediaplayer rol"
+test1: "Deze variabele is vanuit de mediaplayer rol"
