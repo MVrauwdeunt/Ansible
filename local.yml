@@ -21,6 +21,7 @@
 - hosts: mediaplayer
   tags: mediaplayer
   become: true
+  include_vars: "vars/test.yml"
   roles:
     - base
     - server
