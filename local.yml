@@ -17,9 +17,11 @@
   tags: mediaplayer
   become: true
   pre_tasks:
-    - include_vars: "test.yml"
+    - debug:
+        msg: "{ host }"
+    - include_vars: "osmc/test.yml"
       tags: always
   roles:
-    - base
-    - server
-    - mediaplayer
+    #- base
+    #- server
+    #- mediaplayer
