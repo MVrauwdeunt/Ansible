@@ -1,4 +1,9 @@
-- include_vars: "..\vars/vars.yml"
+- include_vars: "vars/vars.yml"
+  tags: always
+
+- include_vars: "vars/vault.yml"
+  tags: always
+
 - block:
         
   - include_tasks: ssh_setup.yml

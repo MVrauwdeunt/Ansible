@@ -1,15 +1,15 @@
-- include_vars: "vars/vars.yml"
-  tags: always
+#- include_vars: "vars/vars.yml"
+#  tags: always
 
-- include_vars: "vars/vault.yml"
-  tags: always
+#- include_vars: "vars/vault.yml"
+#  tags: always
 
 - hosts: localhost
   connection: local
   become: true
-  #vars_files: 
-  #  - vars/vars.yml
-  #  - vars/vault.yml
+  vars_files: 
+    - vars.yml
+    - vault.yml
 
   pre_tasks:
     - name: update repositories
