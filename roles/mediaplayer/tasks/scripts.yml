@@ -14,7 +14,7 @@
 #    dest: /home/{{ user }}/Scripts
 
 - debug:
-    msg: "{{ blaat }}"
+    msg: "{{ hostvars[host]['varname'] }}"
 
 - name: Copy Scripts
   copy:
