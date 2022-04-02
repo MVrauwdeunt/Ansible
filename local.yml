@@ -18,7 +18,7 @@
   become: true
   pre_tasks:
     - include_vars:
-        dir: "{{ ansible_host }}"
+        dir: "vars/{{ ansible_host }}"
       tags: always
   roles:
     #- base
