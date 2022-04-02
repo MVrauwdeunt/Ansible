@@ -12,7 +12,7 @@
     - vars/vault.yml
 
   pre_tasks:
-    - include_vars: "vars/test.yml"
+    - include_vars: "test.yml"
       tags: always
     - name: update repositories
       apt:
