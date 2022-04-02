@@ -1,0 +1,16 @@
+user: osmc
+scripts_osmc:
+  - irswitch.sh
+  - shutdown.sh
+
+scripts_freya:
+  - irswitch.sh
+  - shutdown.sh
+
+scripts_baldr:
+  - irswitch.sh
+  - shutdown.sh
+  - fancontrol.sh
+  - tvswitch.sh
+
+test: "Dit is een test"
