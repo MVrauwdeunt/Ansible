@@ -12,6 +12,8 @@
     - vars/vault.yml
 
   pre_tasks:
+    - include_vars: "vars/test.yml"
+      tags: always
     - name: update repositories
       apt:
         update_cache:: yes
@@ -21,7 +23,6 @@
 - hosts: mediaplayer
   tags: mediaplayer
   become: true
-  include_vars: "vars/test.yml"
   roles:
     - base
     - server
