@@ -17,12 +17,10 @@
   tags: mediaplayer
   become: true
   pre_tasks:
-    - include_vars: "osmc/test.yml"
+    - include_vars:
+        dir: "{{ ansible_host }}/test.yml"
       tags: always
   roles:
     #- base
     #- server
-    #- mediaplayer
-  tasks:
-    - debug:
-        msg: "System {{ inventory_hostname }} {{ ansible_host }}" 
+    - mediaplayer
