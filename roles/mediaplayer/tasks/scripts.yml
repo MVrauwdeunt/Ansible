@@ -25,7 +25,7 @@
     dest: "/etc/systemd/system/{{ item }}.service"
     group: osmc
     mode: 0644
-  with_items: "{{ vars['serviced_' + ansible_hostname] }}"
+  with_items: "{{ vars['services_' + ansible_hostname] }}"
 
 - name: "enable services"
   service: 
