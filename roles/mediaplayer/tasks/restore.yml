@@ -23,10 +23,7 @@
 - name: Get latest file
   set_fact:
     latest_file: "{{ (found_files.files|sort(attribute='mtime')|last).path }}" 
-
-- debug:
-    msg: "{{ latest_file }}"
-
+    
 - name: Unarchive a file that is already on the remote machine
   unarchive:
     src: "{{ latest_file }}"
