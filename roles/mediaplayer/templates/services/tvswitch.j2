@@ -6,7 +6,7 @@ Wants = network-online.target
 [Service]
 Type = simple
 TimeoutStopSec = 20
-ExecStart = /bin/bash /usr/bin/tvswitch.sh
+ExecStart = /bin/bash /home/{{ user }}/Scripts/tvswitch.sh
 # ExecStopPost = /usr/bin/mediacenter stop
 Restart = on-abort
 

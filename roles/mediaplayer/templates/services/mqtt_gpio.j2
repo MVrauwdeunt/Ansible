@@ -4,7 +4,7 @@ After=multi-user.target
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python -m pi_mqtt_gpio.server /home/osmc/config.yml
+ExecStart=/usr/bin/python -m pi_mqtt_gpio.server /home/{{ user }}/Scripts/config.yml
 User=root
 WorkingDirectory=/home/osmc
 Restart=on-failure

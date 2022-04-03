@@ -5,7 +5,7 @@ Conflicts=getty@tty1.service
 
 [Service]
 Type=idle
-ExecStart= /usr/bin/python /home/osmc/Scripts/fan_control.py
+ExecStart= /usr/bin/python /home/{{ user }}/Scripts/fan_control.py
 
 
 [Install]
