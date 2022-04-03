@@ -21,15 +21,15 @@
 
 - name: create service files from template
   template:
-    src: "templates//services/{{ item }}.j2"
+    src: "templates/services/{{ item }}.j2"
     dest: "/etc/systemd/system/{{ item }}.service"
     group: osmc
     mode: 0644
-  with_items: "{{ vars['scripts_' + ansible_hostname] }}"
+  with_items: "{{ vars['serviced_' + ansible_hostname] }}"
 
 - name: "enable services"
   service: 
     name: "{{ item }}"
     enabled: yes
     state: started
-  with_items: "{{ vars['scripts_' + ansible_hostname] }}"
+  with_items: "{{ vars['services_' + ansible_hostname] }}"
