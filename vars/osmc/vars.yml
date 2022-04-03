@@ -13,4 +13,8 @@ scripts_baldr:
   - fancontrol.sh
   - tvswitch.sh
 
+services_osmc:
+  - irswitch
+  - irswitch2
+
 test1: "Deze variabele is vanuit de mediaplayer rol"

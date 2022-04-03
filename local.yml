@@ -21,6 +21,6 @@
         dir: "vars/{{ ansible_host }}"
       tags: always
   roles:
-    #- base
-    #- server
+    - base
+    - server
     - mediaplayer
