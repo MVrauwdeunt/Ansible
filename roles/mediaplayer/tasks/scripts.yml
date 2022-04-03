@@ -29,7 +29,7 @@
 
 - name: "enable services"
   service: 
-    name: {{ item }}
+    name: "{{ item }}"
     enabled: yes
     state: started
   with_items: "{{ vars['scripts_' + ansible_hostname] }}"
