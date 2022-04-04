@@ -3,16 +3,6 @@ scripts_osmc:
   - irswitch.sh
   - shutdown.sh
 
-scripts_freya:
-  - irswitch.sh
-  - shutdown.sh
-
-scripts_baldr:
-  - irswitch.sh
-  - shutdown.sh
-  - fancontrol.sh
-  - tvswitch.sh
-
 services_osmc:
   - irswitch
   - irswitch2
