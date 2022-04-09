@@ -14,3 +14,4 @@ scripts_baldr:
   - tvswitch.sh
 
 test: "Dit is een test"
+backup: fgrf
