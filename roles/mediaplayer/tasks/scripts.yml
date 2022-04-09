@@ -36,4 +36,4 @@
     name: "{{ item }}"
     enabled: yes
     state: started
-  with_items: "{{ vars['services }}"
+  with_items: "{{ services }}"
