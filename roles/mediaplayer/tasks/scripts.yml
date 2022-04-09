@@ -20,7 +20,7 @@
     owner: osmc
     group: osmc
     mode: 0775
-  with_items: "{{ vars['scripts_' + ansible_hostname] }}"
+  with_items: "{{ vars['scripts_' + ansible_hostname]|lower }}"
 
 - name: create service files from template
   template:
@@ -29,11 +29,11 @@
     owner: osmc
     group: osmc
     mode: 0644
-  with_items: "{{ vars['services_' + ansible_hostname] }}"
+  with_items: "{{ vars['services_' + ansible_hostname]|lower }}"
 
 - name: "enable services"
   service: 
     name: "{{ item }}"
     enabled: yes
     state: started
-  with_items: "{{ vars['services_' + ansible_hostname] }}"
+  with_items: "{{ vars['services_' + ansible_hostname]|lower }}"

@@ -1,10 +1,10 @@
 user: osmc
-scripts_osmc:
+scripts:
   - irswitch.sh
   - shutdown.sh
   - fan_control.py
 
-services_osmc:
+services:
   - irswitch
   - irswitch2
 
