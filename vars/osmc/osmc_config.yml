@@ -8,3 +8,5 @@ services_osmc:
   - irswitch2
 
 test1: "Deze variabele is vanuit de mediaplayer rol"
+
+blaat: "gelukt LS087610246NL LS087610246NL"
