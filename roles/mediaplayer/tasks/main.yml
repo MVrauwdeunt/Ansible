@@ -12,5 +12,5 @@
 - include_tasks: scripts.yml
 - include_tasks: repositories.yml
 
-- debug:
-    msg: "{{ blaat }} {{ pubkey }} {{ fileserver }}"
+#- debug:
+#    msg: "{{ blaat }} {{ pubkey }} {{ fileserver }}"
