@@ -13,4 +13,4 @@
 #- include_tasks: repositories.yml
 
 - debug:
-    msg: "{{ services2 | map(attribute='') }}"
+    msg: "{{ services2 | map(attribute='name') }}"
