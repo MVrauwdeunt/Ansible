@@ -1,9 +1,9 @@
 - name: Creates Script directory
   file:
-    path: {{ scriptdir }}
+    path: "{{ scriptdir }}"
     state: directory
-    owner: {{ user }}
-    group: {{ group }}
+    owner: "{{ user }}"
+    group: "{{ group }}"
     mode: 0775
     recurse: yes
 
@@ -16,9 +16,9 @@
 - name: Copy Scripts
   copy:
     src: files/scripts/{{ item.script }}
-    dest: {{ scriptdir }}
-    owner: {{ user }}
-    group: {{ group }}
+    dest: "{{ scriptdir }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
     mode: 0775
   with_items: "{{ services }}"
 
@@ -26,8 +26,8 @@
   template:
     src: "templates/services/{{ item.service }}"
     dest: "{{servicedir}}/{{ item.name | lower | replace(' ', '_') }}.service"
-    owner: {{ user }}
-    group: {{ group }}
+    owner: "{{ user }}"
+    group: "{{ group }}"
     mode: 0644
   with_items: "{{ services }}"
 
