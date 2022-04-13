@@ -9,7 +9,7 @@
 
   - name: install pip package
     command: sudo python3 -m pip install -U {{ item }}
-    with-items:
+    with_items:
       - setuptools
       - wheel
       - pycryptodomex
