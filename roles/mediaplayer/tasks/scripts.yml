@@ -22,7 +22,7 @@
     mode: 0775
   with_items: "{{ services }}"
 
-- name: create service files from template
+- name: Create service files from template
   template:
     src: "templates/services/{{ item.service }}"
     dest: "{{servicedir}}/{{ item.name | lower | replace(' ', '_') }}.service"
