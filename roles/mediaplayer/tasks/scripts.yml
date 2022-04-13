@@ -7,33 +7,27 @@
     mode: 0775
     recurse: yes
 
-#- name: Copy Scripts folder
-#  tags: openssh,ssh,system,settings
-#  copy:
-#    src: files/scripts
-#    dest: /home/{{ user }}/Scripts
-
 - name: Copy Scripts
   copy:
     src: files/scripts/{{ item.script }}
     dest: "{{ scriptdir }}"
     owner: "{{ user }}"
     group: "{{ group }}"
-    mode: 0775
+    mode: 0755
   with_items: "{{ services }}"
 
 - name: Create service files from template
   template:
     src: "templates/services/{{ item.service }}"
     dest: "{{servicedir}}/{{ item.name | lower | replace(' ', '_') }}.service"
-    owner: "{{ user }}"
-    group: "{{ group }}"
+    owner: "root"
+    group: "root"
     mode: 0644
   with_items: "{{ services }}"
 
-#- name: "enable services"
-#  service: 
-#    name: "{{ item.name }}.service"
-#    enabled: yes
-#    state: started
-#  with_items: "{{ services }}"
+- name: "enable services"
+  service: 
+    name: "{{ item.name | lower | replace(' ', '_') }} }}.service"
+    enabled: yes
+    state: started
+  with_items: "{{ services }}"

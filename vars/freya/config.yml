@@ -1,0 +1,12 @@
+user: osmc
+group: osmc
+
+scriptdir: "/home/{{ user }}/Scripts/"
+servicedir: "/home/{{ user }}"
+
+backuppath: /volume2/Backup
+
+services: [
+  {"name": "irswitch", "script": "irswitch.sh", "service": "irswitch.j2"},
+  {"name": "irsshutdown", "script": "shutdown.sh", "service": "irswitch2.j2"}
+]
