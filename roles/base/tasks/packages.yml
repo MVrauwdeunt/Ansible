@@ -1,18 +1,13 @@
 ---
   - name: install packages
-    package:
-      name: 
-        - cron
-        - python3-crypto
-        - build-essential
-        - python3-pip
+    package: "{{ item }}"
+    with_items: "{{ pippackages }}"
 
   - name: install pip package
-    command: sudo python3 -m pip install -U {{ item }}
-    with_items:
-      - setuptools
-      - wheel
-      - pycryptodomex
+    command: python3 -m pip install -U {{ item }}
+    with_items: "{{ pippackages }}"
+    become: yes
+    become_user: "{{ user }}"
 
   #- name: Installing multiple python packages in Ansible
   #  pip:

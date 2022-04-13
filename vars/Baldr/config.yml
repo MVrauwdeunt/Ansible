@@ -19,3 +19,7 @@ packages:
   - build-essential
   - python3-pip
 
+pip_modules:
+  - setuptools
+  - wheel
+  - pycryptodomex
