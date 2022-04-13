@@ -15,3 +15,12 @@
 - debug:
     msg: "{{ item.name }}, {{ item.description }} and {{ item.script }}"
   with_items: "{{ services2 }}"
+
+- name: create service files from template
+  template:
+    src: "templates/services.j2"
+    dest: "/home/{{ user }}/{{ item.name }}.service"
+    owner: osmc
+    group: osmc
+    mode: 0644
+  with_items: "{{ services2 }}"

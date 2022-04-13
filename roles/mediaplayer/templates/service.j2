@@ -1,0 +1,12 @@
+[Unit]
+Description={{ item.decription }}
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+Type=idle
+ExecStart= /usr/bin/python /home/{{ user }}/Scripts/{{ item.script }}
+
+
+[Install]
+WantedBy=multi-user.target
