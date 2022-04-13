@@ -5,7 +5,7 @@
 
   - name: install pip package
     command: python3 -m pip install -U {{ item }}
-    with_items: "{{ pippackages }}"
+    with_items: "{{ pip_modules }}"
     become: yes
     become_user: "{{ user }}"
 
