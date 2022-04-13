@@ -15,7 +15,9 @@ blaat: "gelukt LS087610246NL LS087610246NL"
 backuppath: /volume2/Backup
 
 services2: [
-  {"name": "Fan Control", "description": "Controls the speed of the fan", "script": "fan_control.py"},
-  {"name": "irswitch", "description": "Controls the speed of the fan", "script": "fan_control.py"}
+  {"name": "irswitch", "script": "irswitch.sh", "service": "irswitch.j2"}
+  {"name": "irsshutdown", "script": "shutdown.sh", "service": "irswitch2.j2"}
+  {"name": "Fan Control", "script": "fan_control.py", "service": "fan_control.j2"},
+
 
 ]

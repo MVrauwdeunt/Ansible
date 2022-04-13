@@ -12,13 +12,17 @@
 #- include_tasks: scripts.yml
 #- include_tasks: repositories.yml
 
-- debug:
-    msg: "{{ item.name }}, {{ item.description }} and {{ item.script }}"
-  with_items: "{{ services2 }}"
-
+#- name: create service files from template
+#  template:
+#    src: "templates/services.j2"
+#    dest: "/home/{{ user }}/{{ item.name | lower | replace(' ', '_') }}.service"
+#    owner: osmc
+#    group: osmc
+#    mode: 0644
+#  with_items: "{{ services2 }}"
 - name: create service files from template
   template:
-    src: "templates/services.j2"
+    src: "templates/services/{{ item.service }}"
     dest: "/home/{{ user }}/{{ item.name | lower | replace(' ', '_') }}.service"
     owner: osmc
     group: osmc
