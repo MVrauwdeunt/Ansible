@@ -14,4 +14,4 @@
 
 - debug:
     msg: "{{ item.name }}, {{ item.description }} and {{ item.script }}"
-  with_items: services2
+  with_items: "{{ services2 }}"
