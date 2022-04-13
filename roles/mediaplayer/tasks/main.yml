@@ -13,4 +13,5 @@
 #- include_tasks: repositories.yml
 
 - debug:
-    msg: "{{ services2 | map(attribute='name') }}"
+    msg: "{{ item.name }}, {{ item.description }} and {{ item.script }}"
+    with_items: "{{ services2 }}"
