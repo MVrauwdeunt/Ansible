@@ -1,12 +1,8 @@
 user: osmc
-scripts:
-  - irswitch.sh
-  - shutdown.sh
-  - fan_control.py
+group: osmc
 
-services:
-  - irswitch
-  - irswitch2
+scriptdir: "/home/{{ user }}/Scripts/"
+servicedir: "/home/{{ user }}"
 
 test1: "Deze variabele is vanuit de mediaplayer rol"
 
@@ -14,7 +10,7 @@ blaat: "gelukt LS087610246NL LS087610246NL"
 
 backuppath: /volume2/Backup
 
-services2: [
+services: [
   {"name": "irswitch", "script": "irswitch.sh", "service": "irswitch.j2"},
   {"name": "irsshutdown", "script": "shutdown.sh", "service": "irswitch2.j2"},
   {"name": "Fan Control", "script": "fan_control.py", "service": "fan_control.j2"}

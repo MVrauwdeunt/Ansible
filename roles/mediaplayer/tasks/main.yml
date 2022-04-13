@@ -9,22 +9,5 @@
         
 #- include_tasks: sources.yml
 #- include_tasks: restore.yml
-#- include_tasks: scripts.yml
+- include_tasks: scripts.yml
 #- include_tasks: repositories.yml
-
-#- name: create service files from template
-#  template:
-#    src: "templates/services.j2"
-#    dest: "/home/{{ user }}/{{ item.name | lower | replace(' ', '_') }}.service"
-#    owner: osmc
-#    group: osmc
-#    mode: 0644
-#  with_items: "{{ services2 }}"
-- name: create service files from template
-  template:
-    src: "templates/services/{{ item.service }}"
-    dest: "/home/{{ user }}/{{ item.name | lower | replace(' ', '_') }}.service"
-    owner: osmc
-    group: osmc
-    mode: 0644
-  with_items: "{{ services2 }}"

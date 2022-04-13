@@ -1,9 +1,9 @@
 - name: Creates Script directory
   file:
-    path: /home/{{ user }}/Scripts
+    path: {{ scriptdir }}
     state: directory
-    owner: osmc
-    group: osmc
+    owner: {{ user }}
+    group: {{ group }}
     mode: 0775
     recurse: yes
 
@@ -15,25 +15,25 @@
 
 - name: Copy Scripts
   copy:
-    src: files/scripts/{{ item }}
-    dest: /home/{{ user }}/Scripts/
-    owner: osmc
-    group: osmc
+    src: files/scripts/{{ item.script }}
+    dest: {{ scriptdir }}
+    owner: {{ user }}
+    group: {{ group }}
     mode: 0775
-  with_items: "{{ scripts }}"
+  with_items: "{{ services }}"
 
 - name: create service files from template
   template:
-    src: "templates/services/{{ item }}.j2"
-    dest: "/etc/systemd/system/{{ item }}.service"
-    owner: osmc
-    group: osmc
+    src: "templates/services/{{ item.service }}"
+    dest: "{{servicedir}}/{{ item.name | lower | replace(' ', '_') }}.service"
+    owner: {{ user }}
+    group: {{ group }}
     mode: 0644
   with_items: "{{ services }}"
 
-- name: "enable services"
-  service: 
-    name: "{{ item }}"
-    enabled: yes
-    state: started
-  with_items: "{{ services }}"
+#- name: "enable services"
+#  service: 
+#    name: "{{ item.name }}.service"
+#    enabled: yes
+#    state: started
+#  with_items: "{{ services }}"
