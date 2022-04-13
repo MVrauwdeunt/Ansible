@@ -1,9 +1,9 @@
 ---
   - name: install packages
     package: "{{ item }}"
-    with_items: "{{ pippackages }}"
+    with_items: "{{ packages }}"
 
-  - name: install pip package
+  - name: install pip modules
     command: python3 -m pip install -U {{ item }}
     with_items: "{{ pip_modules }}"
     become: yes
