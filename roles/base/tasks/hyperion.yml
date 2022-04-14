@@ -35,3 +35,8 @@
 #  apt: deb="/home/{{ USER }}/Downloads/hyperion.deb"
 #  sudo: true
 #  when: hyperion_check_deb.rc == 1
+
+- name: import hyperion key
+  apt_key:
+    url: "https://apt.hyperion-project.org/hyperion.pub.key"
+    state: present
