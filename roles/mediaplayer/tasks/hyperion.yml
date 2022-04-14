@@ -1,0 +1,37 @@
+
+
+- name: check latest hyperion
+  uri:
+    url: https://api.github.com/repos/hyperion-project/hyperion.ng/latest
+    return_content: true
+  register: hyperion_latest
+
+#- name: "installing watchexec {{ watchexec_latest.json.tag_name }}"
+#  loop: "{{ watchexec_latest.json.assets }}"
+#  when: "'x86_64-unknown-linux-musl.tar.xz' in item.name"
+#  unarchive:
+#    remote_src: yes
+#    src: "{{ item.browser_download_url }}"
+#    dest: "{{ ansible_env.HOME }}/bin/"
+#    keep_newer: yes
+#    extra_opts:
+#    - --strip=1
+#    - --no-anchored
+#    - watchexec
+
+#- name: Check if Hyperion is installed
+#  command: dpkg-query -W hyperion
+#  register: hyperion_check_deb
+#  failed_when: hyperion_check_deb.rc > 1
+#  changed_when: hyperion_check_deb.rc == 1
+
+#- name: Download hyperion
+#  get_url: 
+#    url="https://github.com/hyperion-project/hyperion.ng/releases/download/2.0.12/Hyperion-2.0.12-Linux-armv7l.deb"
+#    dest="/home/{{ USER }}/Downloads/hyperion.deb"
+#  when: hyperion_check_deb.rc == 1
+
+#- name: Install hyperion
+#  apt: deb="/home/{{ USER }}/Downloads/hyperion.deb"
+#  sudo: true
+#  when: hyperion_check_deb.rc == 1

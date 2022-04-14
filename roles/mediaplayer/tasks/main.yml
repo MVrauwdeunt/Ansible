@@ -8,6 +8,15 @@
 #- block:
         
 #- include_tasks: sources.yml
-- include_tasks: restore.yml
-- include_tasks: scripts.yml
+#- include_tasks: restore.yml
+#- include_tasks: scripts.yml
 #- include_tasks: repositories.yml
+
+- name: check latest hyperion
+  uri:
+    url: https://api.github.com/repos/hyperion-project/hyperion.ng/latest
+    return_content: true
+  register: hyperion_latest
+
+- debug:
+    msg: "[[ hyperion_latest"

@@ -19,6 +19,9 @@ packages:
   - build-essential
   - python3-pip
 
+deb_packages: [
+  - {"name": "hyperion", "url": 
+
 pip_modules:
   - setuptools
   - wheel
