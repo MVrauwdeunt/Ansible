@@ -40,3 +40,7 @@
   apt_key:
     url: "https://apt.hyperion-project.org/hyperion.pub.key"
     state: present
+
+- apt_repository:
+    repo: deb https://apt.hyperion-project.org/ $(lsb_release -cs) main
+    state: present
