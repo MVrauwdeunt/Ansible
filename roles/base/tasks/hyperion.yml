@@ -42,5 +42,5 @@
     state: present
 
 - apt_repository:
-    repo: deb https://apt.hyperion-project.org/ $(lsb_release -cs) main
+    repo: deb https://apt.hyperion-project.org/ buster main
     state: present
