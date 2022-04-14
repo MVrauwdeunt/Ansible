@@ -19,9 +19,9 @@ packages:
   - build-essential
   - python3-pip
 
-deb_packages: [
-  - {"name": "hyperion", "url": "https://github.com/hyperion-project/hyperion.ng/releases/download/2.0.12/Hyperion-2.0.12-Linux-armv7l.deb"}
-]
+#deb_packages: [
+#  - {"name": "hyperion", "url": "https://github.com/hyperion-project/hyperion.ng/releases/download/2.0.12/Hyperion-2.0.12-Linux-armv7l.deb"}
+#]
 
 pip_modules:
   - setuptools
