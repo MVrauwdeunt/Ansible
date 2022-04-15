@@ -22,6 +22,6 @@
       tags: always
   roles:
     - base
-    #- server
-    #- mediaplayer
+    - server
+    - mediaplayer
 
