@@ -27,7 +27,7 @@
 
 - name: "enable services"
   service: 
-    name: "{{ item.name | lower | replace(' ', '_') }} }}.service"
+    name: "{{ item.name | lower | replace(' ', '_') }}.service"
     enabled: yes
     state: started
   with_items: "{{ services }}"
