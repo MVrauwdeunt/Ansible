@@ -5,8 +5,9 @@
   register: cura_latest
 
 - name: "installing cura {{ cura_latest.json.tag_name }}"
+  loop: "{{ cura_latest.json.assets }}"
   debug:
-    msg: "{{ cura_latest.json.assets }}"
+    msg: "{{ item.browser_download_url }}"
   # loop: "{{ watchexec_latest.json.assets }}"
   # when: "'x86_64-unknown-linux-musl.tar.xz' in item.name"
   # unarchive:
