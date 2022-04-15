@@ -33,4 +33,5 @@
         dir: "vars/{{ ansible_host }}"
       tags: always
   roles:
+    - test
 
