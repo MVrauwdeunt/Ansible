@@ -4,7 +4,7 @@
     return_content: true
   register: cura_latest
 
-- name: "installing cura {{ cura_latest.json.tag_name }}"
+- name: "installing cura "
   loop: "{{ cura_latest.json.assets }}"
   when: item.name is match("*.AppImage")
   debug:
