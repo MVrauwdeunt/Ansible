@@ -9,15 +9,6 @@
   when: item.name is match(".*.AppImage$")
   get_url:
     url: "{{ item.browser_download_url }}"
-    dest: "/home/zanbee/"
-  # loop: "{{ watchexec_latest.json.assets }}"
-  # when: "'x86_64-unknown-linux-musl.tar.xz' in item.name"
-  # unarchive:
-  #   remote_src: yes
-  #   src: "{{ item.browser_download_url }}"
-  #   dest: "{{ ansible_env.HOME }}/bin/"
-  #   keep_newer: yes
-  #   extra_opts:
-  #   - --strip=1
-  #   - --no-anchored
-  #   - watchexec
+    dest: "/usr/local/bin/"
+  debug:
+    msg: "item.name"
