@@ -6,7 +6,7 @@
 
 - name: "installing cura {{ cura_latest.json.tag_name }}"
   #loop: "{{ cura_latest.json.assets }}"
-  #when: "''"
+  when: match("*.AppImage"
   debug:
     msg: "{{ cura_latest.json.assets }}"
   # loop: "{{ watchexec_latest.json.assets }}"
