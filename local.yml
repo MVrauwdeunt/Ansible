@@ -25,3 +25,12 @@
     - server
     - mediaplayer
 
+- hosts: workstation
+  tags: workstation
+  become: true
+  pre_tasks:
+    - include_vars:
+        dir: "vars/{{ ansible_host }}"
+      tags: always
+  roles:
+

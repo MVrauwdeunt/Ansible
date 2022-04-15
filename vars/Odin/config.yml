@@ -1,0 +1,7 @@
+packages: 
+  - cron
+  - RPi.GPIO
+  - python3-crypto
+  - build-essential
+  - python3-pip
+  - hyperion
