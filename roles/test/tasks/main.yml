@@ -4,11 +4,9 @@
     return_content: true
   register: cura_latest
 
-- name: installing cura "{{ cura_latest.json.tag_name }}"
+- name: "installing cura {{ cura_latest.json.tag_name }}"
   loop: "{{ cura_latest.json.assets }}"
   when: item.name is match(".*.AppImage$")
   get_url:
     url: "{{ item.browser_download_url }}"
     dest: "/usr/local/bin/"
-  debug:
-    msg: " boe: {{ item.name }}"
