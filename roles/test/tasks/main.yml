@@ -6,7 +6,7 @@
 
 - name: "installing cura {{ cura_latest.json.tag_name }}"
   loop: "{{ cura_latest.json.assets }}"
-  #when: item.name is match("*.AppImage")
+  when: item.name is match("Ultimaker_Cura-4.13.1.AppImage")
   debug:
     msg: "{{ item.name }}"
   # loop: "{{ watchexec_latest.json.assets }}"
