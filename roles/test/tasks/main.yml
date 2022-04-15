@@ -5,8 +5,8 @@
   register: cura_latest
 
 - name: "installing cura {{ cura_latest.json.tag_name }}"
-  #loop: "{{ cura_latest.json.assets }}"
-  when: match("*.AppImage"
+  loop: "{{ cura_latest.json.assets }}"
+  when: item.name is match("*.AppImage"
   debug:
     msg: "{{ cura_latest.json.assets }}"
   # loop: "{{ watchexec_latest.json.assets }}"
