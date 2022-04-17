@@ -10,3 +10,7 @@ services: [
   {"name": "irswitch", "script": "irswitch.sh", "service": "irswitch.j2"},
   {"name": "irsshutdown", "script": "shutdown.sh", "service": "irswitch2.j2"}
 ]
+
+packages: 
+  - cron
+

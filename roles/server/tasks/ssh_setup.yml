@@ -28,7 +28,8 @@
 - name: add pubkey to authorized_keys
   lineinfile:
     path: "/home/{{ user }}/.ssh/authorized_keys"
-    line: "{{ pubkey }}"
+    line: "{{ item }}"
+  with_items: "{{ pubkey }}"
 
 - name: system setup | openssh | generate sshd_config file from template
   tags: openssh,ssh,system,settings
