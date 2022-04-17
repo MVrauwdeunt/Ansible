@@ -2,7 +2,7 @@ user: osmc
 group: osmc
 
 scriptdir: "/home/{{ user }}/Scripts/"
-servicedir: "/home/{{ user }}"
+servicedir: "/etc/systemd/system/"
 
 backupdir: /volume2/Backup
 
