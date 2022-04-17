@@ -4,7 +4,7 @@ group: osmc
 scriptdir: "/home/{{ user }}/Scripts/"
 servicedir: "/home/{{ user }}"
 
-backuppath: /volume2/Backup
+backupdir: /volume2/Backup
 
 services: [
   {"name": "irswitch", "script": "irswitch.sh", "service": "irswitch.j2"},
