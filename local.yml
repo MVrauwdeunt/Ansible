@@ -38,6 +38,6 @@
         dir: "vars/{{ ansible_host }}"
       tags: always
   roles:
-    - base
+    #- base
     - geerlingguy.docker
     
