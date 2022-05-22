@@ -1,7 +1,12 @@
 packages: 
-  - cron
-  - RPi.GPIO
-  - python3-crypto
-  - build-essential
-  - python3-pip
-  - hyperion
+  - htop
+  - cronie
+  - keepass
+  - vim
+  - cura
+  - code
+  - thunderbird
+  - nextcloud-client
+  - libreoffice
+  - gimp
+  - xsane

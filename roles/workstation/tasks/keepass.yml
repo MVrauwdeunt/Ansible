@@ -1,0 +1,38 @@
+- name: get KeePassRPC URL 
+  uri:                                                               
+    url: https://api.github.com/repos/kee-org/keepassrpc/releases/latest
+    return_content: true                                             
+  register: keePassrpc_reponse                                             
+
+- name: download KeepassRPC
+  get_url:                                                           
+    url: "{{ keePassrpc_reponse.json.assets.0.browser_download_url }}"                       
+    dest: /usr/share/keepass/Plugins/
+    owner: root
+    group: root
+
+- name: get readablepassphrasegenerator URL 
+  uri:                                                               
+    url: https://api.github.com/repos/ligos/readablepassphrasegenerator/releases/latest
+    return_content: true                                             
+  register: readablepassphrasegenerator_reponse                                             
+
+- name: download readablepassphrasegenerator
+  get_url:                                                           
+    url: "{{ readablepassphrasegenerator_reponse.json.assets.6.browser_download_url }}"                       
+    dest: /usr/share/keepass/Plugins/
+    owner: root
+    group: root
+
+- name: get HIBP URL 
+  uri:                                                               
+    url: https://api.github.com/repos/mihaifm/HIBPOfflineCheck/releases/latest
+    return_content: true                                             
+  register: hibp_reponse                                             
+
+- name: download HIBP
+  get_url:                                                           
+    url: "{{ hibp_reponse.json.assets.0.browser_download_url }}"                       
+    dest: /usr/share/keepass/Plugins/
+    owner: root
+    group: root

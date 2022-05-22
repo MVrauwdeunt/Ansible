@@ -1,0 +1,41 @@
+- name: copy wallpaper folder
+  copy:
+    src: files/salientos/
+    dest: /usr/share/endeavouros/backgrounds/salientos
+    owner: root
+    group: root
+
+- name: set wallpaper
+  xfconf:
+    channel: "xfce4-desktop"
+    property: "/backdrop/screen0/monitorDVI-D-1/workspace0/last-image"
+    value_type: string
+    value: "/usr/share/endeavouros/backgrounds/salientos/01.jpg"
+  become_user: zanbee
+  become: true
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+
+- name: set changing wallpaper
+  become_user: zanbee
+  xfconf:
+    channel: "xfce4-desktop"
+    property: "/backdrop/screen0/monitorDVI-D-1/workspace0/backdrop-cycle-enable"
+    value_type: bool
+    value: "true"
+  become_user: zanbee
+  become: true
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus
+
+- name: set random wallpaper
+  become_user: zanbee
+  xfconf:
+    channel: "xfce4-desktop"
+    property: "/backdrop/screen0/monitorDVI-D-1/workspace0/backdrop-cycle-random-order"
+    value_type: bool
+    value: "true"
+  become_user: zanbee
+  become: true
+  environment:
+    DBUS_SESSION_BUS_ADDRESS: unix:path=/run/user/1000/bus

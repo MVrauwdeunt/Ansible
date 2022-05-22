@@ -1,0 +1,12 @@
+- name: configuration
+  include_tasks: configuration.yml
+
+- name: set wallpaper
+  include_tasks: wallpaper.yml
+
+- name: keepass plugins
+  include_tasks: keepass.yml
+
+- name: nextcloud
+  include_tasks: nextcloud.yml
+  

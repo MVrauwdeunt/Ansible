@@ -1,0 +1,19 @@
+---
+- name: copy .bashrc file
+  copy:
+    src: files/bashrc
+    dest: /home/zanbee/.bashrc
+    owner: zanbee
+    group: zanbee
+
+- name: Insert alias to /etc/bash.bashrc
+  lineinfile:
+    path: /etc/bash.bashrc
+    line: "alias vi='vim'"
+
+- name: create .gitconfig
+  template:
+    src: "templates/gitconfig.j2"
+    dest: "/home/zanbee/.gitconfig"
+    owner: zanbee
+    group: zanbee
