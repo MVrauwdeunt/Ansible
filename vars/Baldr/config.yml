@@ -23,6 +23,6 @@ packages:
 
 
 pip_modules:
-  - setuptools
+  # - setuptools
   - wheel
-  - pycryptodomex
+  # - pycryptodomex
