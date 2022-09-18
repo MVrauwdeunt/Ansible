@@ -22,7 +22,7 @@
     - server
     - mediaplayer
 
-- hosts: Odin
+- hosts: workstation
   tags: workstation
   become: true
   pre_tasks:
