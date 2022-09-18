@@ -29,6 +29,9 @@
     - include_vars:
         dir: "vars/{{ ansible_host }}"
       tags: always
+  roles:
+    - base
+    - workstation
 
 #- hosts: satalites
 #  tags: satalites
