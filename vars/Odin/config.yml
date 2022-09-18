@@ -10,3 +10,5 @@ packages:
   - libreoffice
   - gimp
   - xsane
+  
+  email_address: m.vrauwdeunt@openmailbox.nl
