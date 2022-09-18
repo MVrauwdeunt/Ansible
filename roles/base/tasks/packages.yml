@@ -1,8 +1,7 @@
 ---
   - name: install packages
-      name: "{{ item }}"
-      with_items: 
-        - "{{ packages }}"
+      #name: "{{ item }}"
+      with_items: "{{ packages }}"
     #when: packages is defined
 
   - name: install pip modules
