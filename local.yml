@@ -42,7 +42,7 @@
       tags: always
   roles:
     - base
-    - workstation
+    - server
 
 #- hosts: satalites
 #  tags: satalites
