@@ -33,6 +33,17 @@
     - base
     - workstation
 
+- hosts: server
+  tags: server
+  become: true
+  pre_tasks:
+    - include_vars:
+        dir: "vars/{{ ansible_host }}"
+      tags: always
+  roles:
+    - base
+    - workstation
+
 #- hosts: satalites
 #  tags: satalites
 #  become: true
