@@ -2,7 +2,7 @@
   - name: install packages
       name: "{{ item }}"
     with_items: "{{ packages }}"
-    #when: packages is defined
+    when: packages is defined
 
   - name: install pip modules
     command: python3 -m pip install -U {{ item }}
