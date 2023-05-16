@@ -1,6 +1,7 @@
 ---
   - name: install packages
-    #  name: "{{ item }}"
+    package:
+      name: "{{ item }}"
     with_items: "{{ packages }}"
     when: packages is defined
 
