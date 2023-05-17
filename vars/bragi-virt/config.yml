@@ -1,3 +1,4 @@
 packages: 
   - htop
   - samba
+  - vim
