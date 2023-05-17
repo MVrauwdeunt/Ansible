@@ -16,4 +16,4 @@
       name: ansible auto-provision
       user: vor
       minute: "*/10"
-      job: ansible-pull -o -U https://github.com/MVrauwdeunt/ansible_desktop.git -i hosts --vault-password-file /home/{{ user }}/.vault.key
+      job: ansible-pull -o -U https://github.com/MVrauwdeunt/Ansible.git -i hosts --vault-password-file /home/{{ user }}/.vault.key
