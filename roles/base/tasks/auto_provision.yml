@@ -15,5 +15,7 @@
     cron:
       name: ansible auto-provision
       user: vor
-      minute: "*/10"
+      weekday: "*"
+      minute: "1"
+      hour: "*"
       job: ansible-pull -o -U https://github.com/MVrauwdeunt/Ansible.git -i hosts --vault-password-file /home/{{ user }}/.vault.key
