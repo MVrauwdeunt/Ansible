@@ -3,3 +3,4 @@ packages:
   - samba
   - vim
   - cowsay
+  - net-tools
