@@ -2,3 +2,4 @@ packages:
   - htop
   - samba
   - vim
+  - cowsay
