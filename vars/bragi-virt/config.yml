@@ -4,3 +4,4 @@ packages:
   - vim
   - cowsay
   - net-tools
+  - iftop
