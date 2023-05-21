@@ -1,3 +1,4 @@
 
         
 - include_tasks: ssh_setup.yml
+- include_tasks: test.yml
