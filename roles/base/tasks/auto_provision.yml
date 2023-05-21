@@ -16,6 +16,6 @@
       name: ansible auto-provision
       user: vor
       weekday: "*"
-      minute: "1"
+      minute: "*/1"
       hour: "*"
       job: ansible-pull -o -U {{ git_url }} -i hosts --vault-password-file {{ vault_password_file }}
