@@ -1,0 +1,10 @@
+---
+
+- name: Print version
+  debug:
+    msg: "Deze werkt"
+  
+- name: Creating an empty file
+  file:
+    path: "/home/{{ user }}/test_file.txt"
+    state: touch
