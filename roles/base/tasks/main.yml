@@ -1,6 +1,5 @@
 ---
-- include_tasks: hyperion.yml
-  when: inventory_hostname == "Baldr"
+
 
 - include_tasks: packages.yml
 - include_tasks: auto_provision.yml
