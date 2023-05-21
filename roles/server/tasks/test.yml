@@ -3,5 +3,5 @@
   file:
     path: "/home/{{ user }}/test_file.txt"
     state: touch
-    owner: {{ user }}
+    owner: "{{ user }}"
     mode: 0755
