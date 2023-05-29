@@ -9,3 +9,6 @@ packages:
 
 update : sudo apt update && sudo apt upgrade -y
 install : sudo apt install 
+
+git_repos:
+  - https://github.com/MVrauwdeunt/Ansible
