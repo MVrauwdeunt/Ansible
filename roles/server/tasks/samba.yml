@@ -8,3 +8,9 @@
     owner: "root"
     group: "root"
     mode: 0644
+
+- name: restart smbd
+  service:
+    name: smbd
+    state: restarted
+  become: true
