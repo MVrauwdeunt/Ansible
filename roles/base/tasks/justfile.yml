@@ -26,13 +26,13 @@
   become: true
   ansible.builtin.get_url:
     url: "https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub"
-    dest: "/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg"
+    dest: "/usr/share/keyrings/prebuilt-mpr-archive-keyring"
     mode: "0644"
 
 - name: Extract and replace gpg keys with dearmor
   become: true
   ansible.builtin.command:
-    cmd: "gpg --dearmor /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg"
+    cmd: "gpg --dearmor /usr/share/keyrings/prebuilt-mpr-archive-keyring"
     creates: "/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg"
 
 - name: Add apt repositories
