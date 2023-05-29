@@ -32,7 +32,7 @@
 - name: Extract and replace gpg keys with dearmor
   become: true
   ansible.builtin.command:
-    cmd: "gpg --dearmor /usr/share/keyrings/prebuilt-mpr-archive-keyring"
+    cmd: "gpg --dearmor /usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg"
     creates: "/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg"
 
 - name: Add apt repositories
