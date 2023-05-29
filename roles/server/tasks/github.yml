@@ -13,4 +13,4 @@
     dest: /home/{{ user }}/Github
     clone: yes
     update: yes
-    with_items: "{{ git_repos }}"
+  with_items: "{{ git_repos }}"
