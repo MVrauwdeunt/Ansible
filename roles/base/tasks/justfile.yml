@@ -1,0 +1,10 @@
+---
+
+- name: generate justfile file from template
+  tags: justfile
+  template:
+    src: "templates/justfile.j2"
+    dest: /home/{{ user }}/.justfile
+    owner: {{ user }}
+    group: {{ user }}
+    mode: 0644
