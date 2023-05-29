@@ -12,3 +12,5 @@ install : sudo apt install
 
 git_repos:
   - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }
+
+share1: volume1

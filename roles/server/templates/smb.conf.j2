@@ -1,0 +1,37 @@
+## {{ ansible_host | capitalize }} Samba Configuration
+
+[global]
+  workgroup = WORKGROUP
+  netbios name = {{ ansible_host | capitalize }}
+  server string = %h server (Samba, Debian) 
+  security = user
+  guest ok = yes
+  map to guest = Bad Password
+
+  log file = /var/log/samba/%m.log
+  max log size = 50
+  printcap name = /dev/null
+  load printers = no
+
+# Samba Shares
+[home]
+  comment = {{ user | capitalize }} home folder
+  path = /home/{{ user }}
+  valid users = {{ user }}
+  browseable = yes
+  read only = no
+  guest ok = no
+
+[volume1]
+  comment = Temp Downloads 
+  path = /volume1
+  browseable = yes
+  read only = no
+  guest ok = no
+
+[volume2]
+  comment = Storage on {{ ansible_host | capitalize }}
+  path = /volume2
+  browseable = yes
+  read only = no
+  guest ok = yes
