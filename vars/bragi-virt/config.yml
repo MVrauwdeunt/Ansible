@@ -5,3 +5,4 @@ packages:
   - cowsay
   - net-tools
   - iftop
+  - nfs-common
