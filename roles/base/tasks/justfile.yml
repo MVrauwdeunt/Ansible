@@ -40,15 +40,10 @@
   ansible.builtin.apt_repository:
     repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr {{ ansible_distribution_release }}"
 
-- name: Update system
-  become: true
-  ansible.builtin.apt:
-    upgrade: 'yes'
-    update_cache: true
-
 - name: install just
   package:
     name: "just"
+    update_cache: yes
 
 - name: generate justfile file from template
   tags: justfile
