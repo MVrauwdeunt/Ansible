@@ -6,3 +6,6 @@ packages:
   - net-tools
   - iftop
   - nfs-common
+
+update : sudo apt update && sudo apt upgrade -y
+install : sudo apt install 
