@@ -3,7 +3,7 @@
 - name: generate Samba config file from template
   template:
     src: templates/smb.conf.j2
-    dest: /home/{{ user }}/smb.conf
-    owner: {{ user }}
-    group: {{ user }}
+    dest: "/home/{{ user }}/smb.conf"
+    owner: "{{ user }}"
+    group: "{{ user }}"
     mode: 0644
