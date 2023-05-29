@@ -10,7 +10,7 @@
 - name: Clone a github repository
   git:
     repo: "{{ item }}"
-    dest: /home/{{ user }}/Github/
+    dest: "/home/{{ user }}/Github/{{ repo }}"
     clone: yes
     update: yes
   with_items: "{{ git_repos }}"
