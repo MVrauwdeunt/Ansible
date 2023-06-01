@@ -13,4 +13,14 @@ install : sudo apt install
 git_repos:
   - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }
 
-share1: volume1
+disks:
+  - { disk: "/dev/disk/by-id/ata-WDC_WD5000AADS-00S9B0_WD-WCAV9T179852-part1", mount: "disk1", options: "xfs defaults 0 0" }
+  - { disk: "/dev/disk/by-id/ata-SAMSUNG_HD103SJ_S246JD2B206681-part1", mount: "disk2", options: "xfs defaults 0 0" }
+  - { disk: "/dev/disk/by-id/ata-TOSHIBA_MQ01ABF050_276OCQUYT-part1", mount: "disk3", options: "xfs defaults 0 0" }
+  - { disk: "/dev/disk/by-id/ata-ST3500418AS_9VMTZH60-part1", mount: "disk4", options: "xfs defaults 0 0" }
+  - { disk: "/dev/disk/by-id/ata-ST2000DM001-1ER164_Z4Z0B28Y-part1 ", mount: "disk5", options: "xfs defaults 0 0" }
+
+  - { disk: "/dev/disk/by-id/ata-Maxtor_6L160M0_L40D9RPG-part1 ", mount: "download1", options: "xfs defaults 0 0" }
+
+  - { disk: "/mnt/disk*", mount: "/volume2", options: "fuse.mergerfs direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs 0 0" }
+  - { disk: "/mnt/download*", mount: "/volume1", options: "fuse.mergerfs direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs 0 0" }
