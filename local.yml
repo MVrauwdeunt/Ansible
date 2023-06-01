@@ -43,7 +43,7 @@
   roles:
     - base
     - server
-    - geerlingguy.docker
+    # - geerlingguy.docker
 
 #- hosts: satalites
 #  tags: satalites
