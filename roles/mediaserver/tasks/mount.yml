@@ -1,0 +1,11 @@
+- name: HDD
+  mount:
+    path: "{{item.mount}}" 
+    src: "{{item.disk}}"
+    opts: "{{item.options}}"
+    dump: "0"
+    passno: "0"
+    fstype: "{{item.fs}}"
+    state: present
+  loop:
+    - "{{disks}}"

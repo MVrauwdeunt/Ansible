@@ -27,8 +27,9 @@
     repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr {{ ansible_distribution_release }}"
 
 - name: install just
-  package:
+  apt:
     name: "just"
+    state: present
     update_cache: yes
 
 - name: generate justfile file from template
