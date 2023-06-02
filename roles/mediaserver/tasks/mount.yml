@@ -1,3 +1,9 @@
+- name: Ensure mountpoints exists.
+  file: 
+    dest: "{{ item.mount }}"
+    state: directory
+  loop: "{{ disks }}"
+
 - name: HDD
   mount:
     path: "{{ item.mount }}" 
