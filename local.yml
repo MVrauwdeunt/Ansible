@@ -44,6 +44,7 @@
     - base
     - server
     - geerlingguy.docker
+    - mediaserver
 
 #- hosts: satalites
 #  tags: satalites
