@@ -3,7 +3,8 @@
     ansible-vault {{ ACTION }} {{invocation_directory()}}/{{ FILE }} --vault-password-file /home/zanbee/.vault.key
 
 @push MSG:
-    git commit -am "{{ MSG }}"
+    git add .
+    git commit -m "{{ MSG }}"
     git push
 
 
