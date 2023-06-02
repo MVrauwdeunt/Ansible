@@ -6,6 +6,7 @@ packages:
   - net-tools
   - iftop
   - nfs-common
+  - mergerfs
 
 update : sudo apt update && sudo apt upgrade -y
 install : sudo apt install 
@@ -23,4 +24,4 @@ disks:
   - { disk: "/dev/disk/by-id/ata-Maxtor_6L160M0_L40D9RPG-part1 ", mount: "download1", options: "xfs defaults" }
 
   - { disk: "/mnt/disk*", mount: "/volume2", fs: "fuse.mergerfs", options: "direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs" }
-  - { disk: "/mnt/download*", mount: "/volume1", fs: "", options: "direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs" }
+  - { disk: "/mnt/download*", mount: "/volume1", fs: "fuse.mergerfs", options: "direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs" }
