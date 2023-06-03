@@ -1,0 +1,9 @@
+packages: 
+  - htop
+  - samba
+  - vim
+  - cowsay
+  - net-tools
+  - iftop
+  - nfs-common
+  - mergerfs

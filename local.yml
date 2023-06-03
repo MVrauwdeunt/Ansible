@@ -42,6 +42,7 @@
       tags: always
   roles:
     - base
+    - artis3n.tailscale
     - server
     - geerlingguy.docker
     - mediaserver

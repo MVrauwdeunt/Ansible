@@ -4,7 +4,7 @@
     state: directory
   loop: "{{ disks }}"
 
-- name: HDD
+- name: Mount Harddisks.
   mount:
     path: "{{ item.mount }}" 
     src: "{{ item.disk }}"

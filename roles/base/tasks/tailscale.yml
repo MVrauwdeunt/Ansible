@@ -1,0 +1,25 @@
+---
+
+- name: Download tailscale apt repository gpg keys 
+  become: true
+  ansible.builtin.get_url:
+    url: "https://proget.makedeb.org/debian-feeds/prebuilt-mpr.pub"
+    dest: "/usr/share/keyrings/prebuilt-mpr-archive-keyring"
+    mode: "0644"
+
+- name: Extract and replace gpg keys with dearmor
+  become: true
+  ansible.builtin.command:
+    cmd: "gpg --dearmor /usr/share/keyrings/prebuilt-mpr-archive-keyring"
+    creates: "/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg"
+
+- name: Add apt repositories
+  become: true
+  ansible.builtin.apt_repository:
+    repo: "deb [arch=amd64 signed-by=/usr/share/keyrings/prebuilt-mpr-archive-keyring.gpg] https://proget.makedeb.org prebuilt-mpr {{ ansible_distribution_release }}"
+
+- name: install just
+  apt:
+    name: "just"
+    state: present
+    update_cache: yes

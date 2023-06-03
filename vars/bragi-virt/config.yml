@@ -25,3 +25,7 @@ disks:
 
   - { disk: "/mnt/disk*", mount: "/volume2", fs: "fuse.mergerfs", options: "direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs" }
   - { disk: "/mnt/download*", mount: "/volume1", fs: "fuse.mergerfs", options: "direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs" }
+
+
+tailscale_up_skip: true
+
