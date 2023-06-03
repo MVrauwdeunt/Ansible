@@ -4,7 +4,7 @@
 # Whether to install or uninstall Tailscale. Either 'latest', 'present', or 'absent'
 state: latest
 # Required Node auth key to authenticate to Tailscale
-tailscale_authkey: ""
+# tailscale_authkey: ""
 # Optional command-line arguments for 'tailscale up'
 tailscale_args: ""
 # Whether to output debug information during role execution
