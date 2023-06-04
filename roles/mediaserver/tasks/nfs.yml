@@ -6,6 +6,6 @@
     path: /etc/exports
     state: present
     line: "{{ item.share }}  *(rw,fsid={{ item.fsid }},no_root_squash,no_subtree_check,insecure)"
-  loop: {{ nfs_shares }}
+  loop: "{{ nfs_shares }}"
   # with_items:
   #   - '/export/volumes  *(rw,no_root_squash,no_subtree_check,insecure)' 
