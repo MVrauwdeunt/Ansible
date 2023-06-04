@@ -7,6 +7,7 @@ packages:
   - iftop
   - nfs-common
   - mergerfs
+  - nfs-kernel-server
 
 update : sudo apt update && sudo apt upgrade -y
 install : sudo apt install 
@@ -25,6 +26,19 @@ disks:
 
   - { disk: "/mnt/disk*", mount: "/volume2", fs: "fuse.mergerfs", options: "direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs" }
   - { disk: "/mnt/download*", mount: "/volume1", fs: "fuse.mergerfs", options: "direct_io,defaults,allow_other,minfreespace=50G,fsname=mergerfs" }
+
+nfs_shares:
+  - { share: "/volume2/Afbeeldingen", fsid: "1" }
+  - { share: "/volume2/Documenten", fsid: "2" }
+  - { share: "/volume2/Downloads", fsid: "3" }
+  - { share: "/volume2/Films", fsid: "4" }
+  - { share: "/volume2/Games", fsid: "5" }
+  - { share: "/volume2/Muziek", fsid: "6" }
+  - { share: "/volume2/Scan", fsid: "7" }
+  - { share: "/volume2/Series", fsid: "8" }
+  - { share: "/volume2/Slaap_Muziek", fsid: "9" }
+  - { share: "/volume2/Backup", fsid: "10" }
+  - { share: "/volume2/Images", fsid: "11" }
 
 
 
