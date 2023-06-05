@@ -45,6 +45,7 @@
     - artis3n.tailscale
     - server
     - geerlingguy.docker
+    - ironicbadger.docker_compose_generator
     - mediaserver
 
 #- hosts: satalites

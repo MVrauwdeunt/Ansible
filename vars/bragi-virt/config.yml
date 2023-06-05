@@ -40,5 +40,39 @@ nfs_shares:
   - { share: "/volume2/Backup", fsid: "10" }
   - { share: "/volume2/Images", fsid: "11" }
 
+# global vars
+global_env_vars:
+  - "PUID=1313"
+  - "PGID=1313"
+appdata_path: /opt/appdata
+container_config_path: /config
+container_data_path: /data
+
+# container definitions
+containers:
+  - service_name: letsencrypt
+    active: true
+    image: linuxserver/letsencrypt
+    container_name: le
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - "{{ appdata_path }}/letsencrypt/config:{{ container_config_path }}"
+    restart: always
+    depends_on:
+      - unifi
+      - nextcloud
+      - quassel
+    include_global_env_vars: true
+    environment:
+      - EMAIL=email@email.com
+      - URL=some.tld
+      - SUBDOMAINS=nc, irc, unifi
+      - ONLY_SUBDOMAINS=true
+      - DHLEVEL=4096
+      - TZ=Europe/London
+      - VALIDATION=http
+    mem_limit: 256m
 
 
