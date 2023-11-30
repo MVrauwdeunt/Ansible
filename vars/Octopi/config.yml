@@ -12,3 +12,4 @@ vault_password_file: vault.yml
 git_repos:
   - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }
 
+user: zanbee 
