@@ -6,5 +6,7 @@ packages:
 update : sudo apt update && sudo apt upgrade -y
 install : sudo apt install 
 
+git_url: 'https://github.com/MVrauwdeunt/Ansible'
+
 git_repos:
   - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }
