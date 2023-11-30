@@ -11,5 +11,5 @@ vault_password_file: vault.yml
 
 git_repos:
   - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }
-
+  - { repo: 'kiauh', url: 'https://github.com/dw-0/kiauh'}
 user: zanbee 
