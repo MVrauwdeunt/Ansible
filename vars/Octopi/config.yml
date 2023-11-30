@@ -2,8 +2,9 @@ packages:
   - htop
   - samba
   - vim
-  - cowsay
-  - net-tools
-  - iftop
-  - nfs-common
-  - mergerfs
+
+update : sudo apt update && sudo apt upgrade -y
+install : sudo apt install 
+
+git_repos:
+  - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }
