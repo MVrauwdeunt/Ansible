@@ -18,5 +18,5 @@
       weekday: "*"
       minute: "*/1"
       hour: "*"
-      job: ansible-pull -o -U {{ git_url }} -i hosts --vault-password-file {{ vault_password_file }}
+      job: ansible-pull -o -U {{ git_url }} -i hosts --vault-password-file /home/{{ user }}/{{ vault_password_file }}
       
