@@ -2,6 +2,7 @@ packages:
   - htop
   - samba
   - vim
+  - android-tools-adb
 
 update : sudo apt update && sudo apt upgrade -y
 install : sudo apt install 
