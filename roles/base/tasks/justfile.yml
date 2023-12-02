@@ -34,9 +34,8 @@
 
 - name: generate justfile file from template
   tags: justfile
-- name: Install ssh config
   copy: 
-    src: "vars/{{ ansible_host }}/files/config" 
+    src: "vars/{{ ansible_host }}/files/config/justfile.yml" 
     dest: "/home/{{ user }}/.jusfile"
   # template:
   #   src: "templates/justfile.j2"
