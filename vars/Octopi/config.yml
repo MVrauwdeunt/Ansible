@@ -22,8 +22,5 @@ vault_password_file: .vault.key
 git_repos:
   - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }
   - { repo: 'kiauh', url: 'https://github.com/dw-0/kiauh'}
-  #- { repo: 'klipper', url: 'https://github.com/Klipper3d/klipper'}
-  #- { repo: 'moonraker', url: 'https://github.com/Arksine/moonraker.git'}
-  #- { repo: 'klipperscreen', url: 'https://github.com/KlipperScreen/KlipperScreen.git'}
 
 user: zanbee 

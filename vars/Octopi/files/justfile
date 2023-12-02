@@ -1,0 +1,20 @@
+update:
+  sudo apt update && sudo apt upgrade -y
+
+install PACKAGE:
+  sudo apt install {{ PACKAGE }}
+
+klipper COMMAND:
+  sudo systemctl {{ COMMAND }} klipper
+
+moonraker COMMAND:
+  sudo systemctl {{ COMMAND }} moonraker
+
+octoprint COMMAND:
+  sudo systemctl {{ COMMAND }} octoprint
+
+klipperscreen COMMAND:
+  sudo systemctl {{ COMMAND }} KlipperScreen
+
+crowsnest COMMAND:
+  sudo systemctl {{ COMMAND }} crowsnest
