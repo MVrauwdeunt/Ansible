@@ -42,7 +42,7 @@
       tags: always
   roles:
     - base
-    - artis3n.tailscale
+    # - artis3n.tailscale
     - server
 
 
