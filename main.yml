@@ -7,6 +7,9 @@
     #     update_cache: yes
     #   changed_when: False
     #   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+    - name: Print all available facts
+      ansible.builtin.debug:
+        var: ansible_facts
     - name: Debug host name
       debug:
         msg: "This is the curent hostname {{ ansible_host }} and in lowers {{ ansible_host | lower }}"
