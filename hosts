@@ -1,21 +1,15 @@
 [workstation]
 Odin
 odin
-Loki
 loki
 
 [mediaplayer]
 osmc
 freya
-Freya
 baldr
-Baldr
 
 [server]
 bragi
-bragi
-bragi2
-Bragi2
 bragi-virt
 octopi
-Octopi
+thor
