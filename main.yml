@@ -12,7 +12,7 @@
         var: ansible_facts
     - name: Debug host name
       debug:
-        msg: "This is the curent hostname {{ ansible_host }} and in lowers {{ ansible_host | lower }}"
+        msg: "This is the curent hostname {{ nodename }} and in lowers {{ nodename | lower }}"
     # - include_vars:
     #     dir: "vars/{{ ansible_host }}"
     #   tags: always
