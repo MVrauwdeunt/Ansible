@@ -1,0 +1,15 @@
+- hosts: all
+  become: true
+
+  pre_tasks:
+    # - name: update repositories
+    #   apt:
+    #     update_cache: yes
+    #   changed_when: False
+    #   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+    - name: Debug host name
+      debug:
+        msg: "This is the curent hostname {{ ansible_host }} and in lowers {{ ansible_host | lower }}"
+    # - include_vars:
+    #     dir: "vars/{{ ansible_host }}"
+    #   tags: always
