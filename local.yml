@@ -9,41 +9,44 @@
         update_cache: yes
       changed_when: False
       when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+    - name: Debug host name
+      debug:
+        msg: "Thisis the curent hostname {{ ansible_host }} and in lowers {{ ansible_host | lower }}"
+    
+# - hosts: mediaplayer
+#   tags: mediaplayer
+#   become: true
+#   pre_tasks:
+#     - include_vars:
+#         dir: "vars/{{ ansible_host | lower }}"
+#       tags: always
+#   roles:
+#     - base
+#     - server
+#     - mediaplayer
 
-- hosts: mediaplayer
-  tags: mediaplayer
-  become: true
-  pre_tasks:
-    - include_vars:
-        dir: "vars/{{ ansible_host }}"
-      tags: always
-  roles:
-    - base
-    - server
-    - mediaplayer
+# - hosts: workstation
+#   tags: workstation
+#   become: true
+#   pre_tasks:
+#     - include_vars:
+#         dir: "vars/{{ ansible_host }}"
+#       tags: always
+#   roles:
+#     - base
+#     - workstation
 
-- hosts: workstation
-  tags: workstation
-  become: true
-  pre_tasks:
-    - include_vars:
-        dir: "vars/{{ ansible_host }}"
-      tags: always
-  roles:
-    - base
-    - workstation
-
-- hosts: server
-  tags: server
-  become: true
-  pre_tasks:
-    - include_vars:
-        dir: "vars/{{ ansible_host }}"
-      tags: always
-  roles:
-    - base
-    # - artis3n.tailscale
-    - server
+# - hosts: server
+#   tags: server
+#   become: true
+#   pre_tasks:
+#     - include_vars:
+#         dir: "vars/{{ ansible_host }}"
+#       tags: always
+#   roles:
+#     - base
+#     # - artis3n.tailscale
+#     - server
 
 
 #- hosts: satalites
