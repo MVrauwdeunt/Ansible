@@ -1,5 +1,9 @@
 packages: 
   - htop
+  - fd
+  - exa
+  - tldr
+  - kitty
   - cronie
   - keepass
   - vim
