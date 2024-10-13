@@ -1,18 +1,32 @@
 - hosts: all
   become: true
+  
+  vars_prompt:
+    - name: HOSTNAME
+      prompt: "What hostname would you give to this system" 
+      private: false
 
   pre_tasks:
-    # - name: update repositories
-    #   apt:
-    #     update_cache: yes
-    #   changed_when: False
-    #   when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
-    - name: Print all available facts
-      ansible.builtin.debug:
-        var: ansible_facts
-    - name: Debug host name
-      debug:
-        msg: "This is the curent hostname {{ ansible_nodename }} and in lowers {{ ansible_nodename | lower }}"
-    # - include_vars:
-    #     dir: "vars/{{ ansible_host }}"
-    #   tags: always
+
+    - name: "Setting hostname to '{{ HOSTNAME }}'"
+      hostname:
+        name: "{{HOSTNAME}}"
+      tags: admin
+
+    - name: update repositories
+      apt:
+        update_cache: yes
+      changed_when: False
+      when: ansible_distribution == 'Debian' or ansible_distribution == 'Ubuntu'
+
+    - include_vars:
+        file: "vars/global_vault.yml"
+      tags: always
+
+    - name: Creating a file with content
+      copy:
+        dest: ".vault.key"
+        content: "{{ Vault_key }}"
+
+- name: Include a play after another play
+  import_playbook: local.yml

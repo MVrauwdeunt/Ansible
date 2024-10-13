@@ -11,30 +11,3 @@
     become: yes
     become_user: "{{ user }}"
     when: pip_modules is defined
-  #- name: Installing multiple python packages in Ansible
-  #  pip:
-  #    name:
-        #- setuptools
-  #      - wheel
-  #      - pycryptodomex
-
-      #  - htop
-      #  - cronie
-      #  - keepass
-      #  - vim
-      #  - cura
-      #  - code
-      #  - thunderbird
-      #  - nextcloud-client
-      #  - libreoffice-fresh
-      #  - steam
-      #  - steam
-      #  - wine
-      #  - powerline-fonts
-      #  - bc
-      #  - xsel
-      #  - xdotool
-      #  - virtualbox
-      #  - linux-headers
-      #  - base-devel
-      #  - dkms
