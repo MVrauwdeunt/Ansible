@@ -51,7 +51,7 @@
   #   src: "vars/{{ ansible_host }}/files/justfile.j2" 
   #   dest: "/home/{{ user }}/.jusfile"
   template:
-    src: "vars/{{ ansible_host }}/templates/justfile.j2"
+    src: "files/{{ ansible_host }}/templates/justfile.j2"
     dest: "/home/{{ user }}/.justfile"
     owner: "{{ user }}"
     group: "{{ user }}"

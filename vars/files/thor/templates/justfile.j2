@@ -2,7 +2,7 @@
 justfile := "$HOME/.justfile"
 home := "$HOME"
 update_cmd := "sudo apt update && sudo apt upgrade -y"
-install_cmd := "sudo apt install -y"
+install_cmd := "sudo apt uinstall -y"
 editor := 'code'
 
 # Define the yaml file path within the justfile
@@ -10,7 +10,7 @@ yaml_file := "~/config.yaml"
 
 #Directories
 home := "/home/zanbee"
-SCRIPTS := "{{ "{{home}}" }}" /Github/Scripts"
+SCRIPTS := "{{ "{{home}}" }}/Github/Scripts"
 
 # This overview of available recipes
 default:
@@ -24,12 +24,12 @@ dd IF OF:
 
 # Update the system 
 update:
-  {{ "{{update_cmd}}" }}
+  {{ "{{ update_cmd }}" }}
 
 # Install a package and add it to a yaml file
 install PACKAGE:
-  {{ "{{install_cmd}}" }} {{ "{{ PACKAGE }}" }}
-  #sh "{{ "{{ SCRIPTS }}" }}/ansible-package-manager.sh" {{ "{{ PACKAGE }}" }}
+  {{ "{{ install_cmd }}" }} {{ "{{ PACKAGE }}" }}
+  sh "{{ "{{ SCRIPTS }}" }}/ansible-package-manager.sh" {{ "{{ PACKAGE }}" }}
 
 ssh_remkey HOST:
-  @ssh-keygen -R {{ "{{ HOST }}" }}
+  @ssh-keygen -R {{ "{{ HOST }} }}"
