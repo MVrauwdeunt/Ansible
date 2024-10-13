@@ -3,5 +3,6 @@
 - include_tasks: security.yml
 - include_tasks: packages.yml
 - include_tasks: github.yml
+- include_tasks: justfile.yml
 # - include_tasks: auto_provision.yml
 # - include_tasks: justfile.yml

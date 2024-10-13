@@ -1,0 +1,87 @@
+# Declare a variable
+justfile := "$HOME/.justfile"
+home := "$HOME"
+update_cmd := "pacman -Syu"
+install_cmd := "pacman -S"
+editor := 'code'
+
+# Define the yaml file path within the justfile
+yaml_file := "~/config.yaml"
+
+#Directories
+home := "/home/zanbee"
+SCRIPTS := "{{home}}/Github/Scripts"
+
+# This overview of available recipes
+default:
+  just --list
+
+justfile:
+  @{{editor}} ~/.justfile
+
+dd IF OF:
+  sudo dd if={{ IF }} of={{ OF }} bs=4M status=progress
+
+# Update the system 
+update:
+  sudo pacman -Syyu
+
+# Install a package and add it to a yaml file
+install PACKAGE:
+  sudo pacman -S {{ PACKAGE }}
+  sh "{{ SCRIPTS }}/ansible-package-manager.sh" {{ PACKAGE }}
+
+ssh_remkey HOST:
+  @ssh-keygen -R {{ HOST }}
+
+# Mount iso files
+iso FILE:
+  @echo Mount {{ FILE }} in /mnt/iso
+  @sudo umount /mnt/iso
+  @sudo mount -o loop {{ FILE }} /mnt/iso
+
+# Open directory in filemanager
+open DIR:
+  @echo {{invocation_directory()}}
+
+echo_package_manager:
+  if [ -e "/etc/redhat-release" ]; then
+  echo "Package manager yum"
+  elif [ -e "/etc/arch-release" ]; then
+  echo "Package manager pacman"
+  elif [ -e "/etc/gentoo-release" ]; then
+  echo "Package manager emerge"
+  elif [ -e "/etc/SuSE-release" ]; then
+  echo "Package manager zypper"
+  elif [ -e "/etc/debian_version" ]; then
+  echo "Package manager apt"
+  elif [ -e "/etc/alpine-release" ]; then
+  echo "Package manager apk"
+  else
+  echo "Unsupported distribution"
+  fi
+
+
+
+# Recipe to add a key to the [packages] section
+# add-package key:
+#   # Check if the YAML file exists; create it if it doesn't
+#   if [ ! -f {{yaml_file}} ]; then
+#     echo "[packages]" > {{yaml_file}}
+#     echo "Created file '{{yaml_file}}' with '[packages]' section."
+#   fi
+#   # Find the line number of the [packages] section
+#   packages_line=$(grep -n "^\[packages\]" {{yaml_file}} | cut -d: -f1)
+#   # Find the line after the last item in the [packages] section
+#   insert_line=$(awk "NR > $packages_line && /^[[:space:]]*\[.*\]/ {exit} {print NR}" {{yaml_file}} | tail -n 1)
+#   # If insert_line is empty, append to the end of the file
+#   if [ -z "$insert_line" ]; then
+#     insert_line=$(wc -l < {{yaml_file}})
+# fi
+#   # Insert the new key as a list item at the end of the [packages] section
+#   sed -i "${insert_line}i\\  - {{key}}" {{yaml_file}}
+#   echo "Added '- {{key}}' under '[packages]' section at the end in '{{yaml_file}}'"
+
+
+# Check for common package manager files and echo the corresponding package manager
+

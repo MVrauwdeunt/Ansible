@@ -1,0 +1,6 @@
+packages:
+  - git
+  - vim
+
+git_repos:
+  - { repo: 'Ansible', url: 'https://github.com/MVrauwdeunt/Ansible' }

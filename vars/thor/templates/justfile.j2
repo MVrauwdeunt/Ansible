@@ -1,0 +1,35 @@
+# Declare a variable
+justfile := "$HOME/.justfile"
+home := "$HOME"
+update_cmd := "sudo apt update && sudo apt upgrade -y"
+install_cmd := "sudo apt install -y"
+editor := 'code'
+
+# Define the yaml file path within the justfile
+yaml_file := "~/config.yaml"
+
+#Directories
+home := "/home/zanbee"
+SCRIPTS := "{{ "{{home}}" }}" /Github/Scripts"
+
+# This overview of available recipes
+default:
+  just --list
+
+justfile:
+  @{{ "{{editor}}" }} ~/.justfile
+
+dd IF OF:
+  sudo dd if={{ "{{ IF }}" }} of={{ "{{ OF }}" }} bs=4M status=progress
+
+# Update the system 
+update:
+  {{ "{{update_cmd}}" }}
+
+# Install a package and add it to a yaml file
+install PACKAGE:
+  {{ "{{install_cmd}}" }} {{ "{{ PACKAGE }}" }}
+  #sh "{{ "{{ SCRIPTS }}" }}/ansible-package-manager.sh" {{ "{{ PACKAGE }}" }}
+
+ssh_remkey HOST:
+  @ssh-keygen -R {{ "{{ HOST }}" }}
