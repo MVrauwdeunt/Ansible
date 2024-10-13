@@ -38,21 +38,17 @@
       return_content: true
     register: just_latest
 
-  - name: "installing Just {{ just_latest.json.tag_name }}"
-    unarchive:
-      remote_src: yes
-      src: "https://github.com/casey/just/releases/download/{{ just_latest.json.tag_name }}/just-{{ just_latest.json.tag_name }}-armv7-unknown-linux-musleabihf.tar.gz"
-      dest: "/home/{{user}}/bin"
+  # - name: "installing Just {{ just_latest.json.tag_name }}"
+  #   copy:
+  #     remote_src: yes
+  #     src: "https://github.com/casey/just/releases/download/{{ just_latest.json.tag_name }}/just-{{ just_latest.json.tag_name }}-armv7-unknown-linux-musleabihf.tar.gz"
+  #     dest: "/home/{{user}}"
 
 
-- name: generate justfile file from template
-  tags: justfile
-  # copy: 
-  #   src: "vars/{{ ansible_host }}/files/justfile.j2" 
-  #   dest: "/home/{{ user }}/.jusfile"
-  template:
-    src: "files/{{ ansible_host }}/templates/justfile.j2"
-    dest: "/home/{{ user }}/.justfile"
-    owner: "{{ user }}"
-    group: "{{ user }}"
-    mode: 0644
+  - name: generate justfile file from template
+    template:
+      src: "{{ ansible_hostname |lower}}/justfile.j2"
+      dest: "/home/{{ user }}/.justfile"
+      owner: "{{ user }}"
+      group: "{{ user }}"
+      mode: 0644

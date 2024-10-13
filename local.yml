@@ -45,7 +45,11 @@
 
   roles:
     - base
-#     # - artis3n.tailscale
+    - artis3n.tailscale
+      vars:
+        # Example pulling the API key from the env vars on the host running Ansible
+        tailscale_authkey: "{{ TAILSCALE_KEY }}"
+        tailscale_args: "--ssh"
 #     - server
 
 
