@@ -42,10 +42,13 @@
     - include_vars:
         dir: "vars/{{ ansible_hostname |lower }}"
       tags: always
+    - include_vars:
+        file: "vars/global_vault.yml"
+      tags: always
 
   roles:
     - base
-    - artis3n.tailscale
+    - role: artis3n.tailscale
       vars:
         # Example pulling the API key from the env vars on the host running Ansible
         tailscale_authkey: "{{ TAILSCALE_KEY }}"

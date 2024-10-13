@@ -9,7 +9,6 @@ editor := 'code'
 yaml_file := "~/config.yaml"
 
 #Directories
-home := "/home/zanbee"
 SCRIPTS := "{{ "{{home}}" }}/Github/Scripts"
 
 # This overview of available recipes
@@ -32,4 +31,4 @@ install PACKAGE:
   sh "{{ "{{ SCRIPTS }}" }}/ansible-package-manager.sh" {{ "{{ PACKAGE }}" }}
 
 ssh_remkey HOST:
-  @ssh-keygen -R {{ "{{ HOST }} }}"
+  @ssh-keygen -R {{ "{{ HOST }}" }}
